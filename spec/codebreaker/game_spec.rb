@@ -56,8 +56,8 @@ module Codebreaker
       it "returns one digit from the secret code; returns positon of this dgt. and :hints_over" do
         game.instance_variable_set(:@secret_code, 6789)
         expect( game.hint! ).to match(/[6789]{1}/)
-        #expect( game.hint! ).to match(/[6789\*]{4}/)
-        expect( game.hint! ).to match(/[\d\*]{4}/)
+        expect( game.hint! ).to match(/[6789\*]{4}/)
+        #expect( game.hint! ).to match(/[\d\*]{4}/)
         expect( game.hint! ).to match :hints_over
       end
 

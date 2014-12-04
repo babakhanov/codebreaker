@@ -33,7 +33,6 @@ module Codebreaker
         out = "+" * status 
         out << "-" * (4 - status)
         if status == 4 && value.to_i == @secret_code.to_i
-          #here we return win status
           return :win
         else
           return out
@@ -47,11 +46,11 @@ module Codebreaker
       @hintcount += 1
         if @hintcount == 1
           @hinted_num = rand(3)
-          return @secret_code.to_s.split("")[@hinted_num]
+          @secret_code.to_s.split("")[@hinted_num]
         elsif @hintcount == 2
           foo = ["*", "*", "*", "*"]
-          foo[@hinted_num] = @secret_code[@hinted_num]
-          return foo.join("")
+          foo[@hinted_num] = @secret_code.to_s.split("")[@hinted_num]
+          foo.join("")
         else
           :hints_over
         end
