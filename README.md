@@ -19,13 +19,17 @@ And then execute:
 
 game = Codebreaker::game.new
 
-game.guessed?('1234') # you'll get a resolt e.g. '++--' if you find a two codebreaker's digits and return :win if all digits finded in right order
+game.guessed?('1234') 
+# you'll get a resolt e.g. '++--' if you find a two codebreaker's digits and return :win if all digits finded in right order
 # after 10th calls return :game_over
-game.hint! # return a hint. Only 2 hint per game. e.g. '1' or other one one digit which codebreaker has for you
-game.hint! # return a "**1*" or something else but contain a value from previous hint in a right place
-game.hint! # at third time return :hints_over
 
+game.hint! 
+# return a hint. Only 2 hints per game. e.g. '1' or other one one digit which codebreaker has for you
+game.hint! # again
+# return a "**1*" or something else but contain a value from previous hint in a right place
 
+game.hint! 
+# at third time return :hints_over
 
 ## Contributing
 
